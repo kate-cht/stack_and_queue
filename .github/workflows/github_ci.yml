@@ -1,4 +1,4 @@
-name: MatrixBuild
+name: StackQueueBuild
 
 on:
   push
@@ -12,7 +12,7 @@ jobs:
             mkdir build
             cmake -Bbuild -G "Visual Studio 16 2019"       
             cmake --build build
-            .\build\bin\test_matrix.exe
+            .\build\bin\test_stack_and_queue.exe
     
   linux-build:
     runs-on: ubuntu-20.04
@@ -20,6 +20,9 @@ jobs:
         - uses: actions/checkout@v2
         - run: |
             mkdir build
+            cmake -Bbuild -G "Unix Makefiles"       
+            cmake --build build
+            ./build/bin/test_stack_and_queue
             cmake -Bbuild -G "Unix Makefiles"       
             cmake --build build
             ./build/bin/test_matrix
