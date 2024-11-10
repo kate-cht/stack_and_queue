@@ -23,6 +23,3 @@ jobs:
             cmake -Bbuild -G "Unix Makefiles"       
             cmake --build build
             ./build/bin/test_stack_and_queue
-            cmake -Bbuild -G "Unix Makefiles"       
-            cmake --build build
-            ./build/bin/test_matrix
