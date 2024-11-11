@@ -160,7 +160,7 @@ public:
 			throw out_of_range("Index should be greater than zero and less than vector size");
 		if (sz == 0)
 			throw logic_error("Vector is empty");
-		for (size_t i = sz; i > ind; i++)
+		for (size_t i = ind; i < sz; i++)
 			pMem[i] = pMem[i + 1];
 		sz--;
 	}
