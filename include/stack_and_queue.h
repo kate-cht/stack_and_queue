@@ -28,14 +28,14 @@ public:
 			throw bad_alloc();
 		copy(arr, arr + sz, pMem);
 	}
-	mVector(const mVector& v) : sz(v.sz), capacity(v.capacity) // это нам зочем
+	mVector(const mVector& v) : sz(v.sz), capacity(v.capacity) 
 	{
 		pMem = new T[capacity];
 		if (pMem == nullptr)
 			throw bad_alloc();
 		copy(v.pMem, v.pMem + sz, pMem);
 	}
-	mVector(mVector&& v) noexcept // это нам зочем
+	mVector(mVector&& v) noexcept 
 	{
 		sz = 0;
 		capacity = 0;
@@ -121,7 +121,7 @@ public:
 		copy(pMem, pMem + sz, p);
 		pMem = p;
 		p = nullptr;
-		capacity = newsize * 2 + 2; // почему не считаем капасити сразу и не создаем сразу р от капасити
+		capacity = newsize * 2 + 2; 
 	}
 	void push_back(T elem)
 	{
