@@ -164,13 +164,13 @@ TEST(mVector, can_push_back_elem)
 
 TEST(mVector, can_push_front_elem)
 {
-    int* arr = new int[3] { 2, 3, 4};
+    int* arr = new int[3] {8, 10, 12};
     mVector<int> v1(arr, 3);
     delete[] arr;
-    int* arr_check = new int[4] {1, 2, 3, 4};
+    int* arr_check = new int[4] {14, 8, 10, 12};
     mVector<int> v2(arr_check, 4);
     delete[] arr_check;
-    v1.push_front(1);
+    v1.push_front(14);
     EXPECT_EQ(v1, v2);
 }
 
@@ -192,13 +192,13 @@ TEST(mVector, throws_when_pop_back_elem_from_empty_vector)
     ASSERT_ANY_THROW(v.pop_back());
 }
 
-TEST(mVector, can_pop_front_elem)
+TEST(mVector, can_pop_front_elem) 
 {
-    int* arr = new int[5] {1, 2, 3, 4, 5};
-    mVector<int> v1(arr, 5);
+    int* arr = new int[3] {8, 10, 12};
+    mVector<int> v1(arr, 3);
     delete[] arr;
-    int* arr_check = new int[4] { 2, 3, 4, 5};
-    mVector<int> v2(arr_check, 4);
+    int* arr_check = new int[2] {10, 12};
+    mVector<int> v2(arr_check, 2);
     delete[] arr_check;
     v1.pop_front();
     EXPECT_EQ(v1, v2);
